@@ -3,6 +3,7 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import ProfilePage from './pages/ProfilePage';
+import CartPage from './pages/CartPage';
 
 function App() {
     const [currentPage, setCurrentPage] = useState('home');
@@ -32,6 +33,8 @@ function App() {
                 return <ProductsPage cart={cart} setCart={setCart} />;
             case 'profile':
                 return <ProfilePage />;
+            case 'cart':
+                return <CartPage cart={cart} onRemove={removeFromCart} />;
             case 'home':
             default:
                 return <HomePage onNavigate={handleNavigate} />;

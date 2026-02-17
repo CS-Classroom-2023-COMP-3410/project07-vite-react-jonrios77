@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-function Header({ currentPage, onNavigate }) {
+function Header({ currentPage, onNavigate, cart = [] }) {
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
     const navStyle = {
         display: 'flex',
         justifyContent: 'space-between',
@@ -11,7 +13,8 @@ function Header({ currentPage, onNavigate }) {
     const navItems = [
         { id: 'home', label: 'Home' },
         { id: 'products', label: 'Products' },
-        { id: 'profile', label: 'Profile' }
+        { id: 'profile', label: 'Profile' },
+        { id: 'cart', label: `Cart (${totalItems})` }    
     ];
 
     return (
