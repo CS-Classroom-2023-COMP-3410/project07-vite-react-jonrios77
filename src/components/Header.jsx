@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 function Header({ currentPage, onNavigate }) {
     const navStyle = {
         display: 'flex',
